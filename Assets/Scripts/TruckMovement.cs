@@ -67,11 +67,11 @@ public class TruckController : MonoBehaviour
             // D o flecha abajo: mover hacia atras (vertical negativo)
             if (Keyboard.current.dKey.isPressed || Keyboard.current.downArrowKey.isPressed) vertical = -1f;
 
-            // W o flecha izquierda: mover a la izquierda (horizontal negativo)
-            if (Keyboard.current.wKey.isPressed || Keyboard.current.leftArrowKey.isPressed) horizontal = -1f;
+            // S o flecha izquierda: mover a la izquierda (horizontal negativo)
+            if (Keyboard.current.sKey.isPressed || Keyboard.current.leftArrowKey.isPressed) horizontal = -1f;
 
-            // S o flecha derecha: mover a la derecha (horizontal positivo)
-            if (Keyboard.current.sKey.isPressed || Keyboard.current.rightArrowKey.isPressed) horizontal = 1f;
+            // W o flecha derecha: mover a la derecha (horizontal positivo)
+            if (Keyboard.current.wKey.isPressed || Keyboard.current.rightArrowKey.isPressed) horizontal = 1f;
         }
 
         // Obtenemos la posicion actual del camion
