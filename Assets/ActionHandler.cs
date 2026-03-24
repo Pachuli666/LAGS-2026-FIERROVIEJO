@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class HolaMundo : MonoBehaviour
+public class ActionHandler : MonoBehaviour
 {
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -11,6 +11,6 @@ public class HolaMundo : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log("Hola Mundo");
+        
     }
 }
