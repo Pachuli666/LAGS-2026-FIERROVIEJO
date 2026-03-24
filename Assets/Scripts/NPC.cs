@@ -1,21 +1,36 @@
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class NPC : MonoBehaviour
 {
+    [SerializeField]
+    private PlayerInfoSO playerData;
+
     public string npcName { get; set; }
-    public int humor { get; set; }
 
-    public int affinity { get; set; }
+    [SerializeField]
+    public Bindable<int> humor;
+
+    public List<ItemSO> sellingItems;
+
+    public int lastOffer;
+    public bool firstOffer = true;
 
 
-    public void IncreaseMood(int amount) => humor += amount;
+    public void IncreaseMood(int amount) => humor.Value += amount;
 
-    public void DecreaseMood(int amount) => humor -= amount;
+    public void DecreaseMood(int amount) => humor.Value = humor.Value == 1 ? 1: humor.Value -= amount;
 
     private void OnEnable()
     {
-        
+        TradeEvents.OnUpdateOffer += ReactOffer;
+    }
+
+    private void OnDisable()
+    {
+        TradeEvents.OnUpdateOffer -= ReactOffer;
+
     }
 
     private void Update()
@@ -25,15 +40,51 @@ public class NPC : MonoBehaviour
         }
     }
 
-    public void ReactOffer(TradeOffer offer) {
+    void ReactOffer(Trade trade,TradeOffer offer) {
 
-        TradeEvents.TriggerReactOffer(offer);
+        if (firstOffer) {
+            lastOffer = offer.priceOffer;
+            firstOffer = false;
+        }
+
+        if (offer.priceOffer > lastOffer) {
+            humor.Value += 1;
+        } else if (offer.priceOffer < lastOffer) {
+            humor.Value -= 1;
+        }
+
+        lastOffer = offer.priceOffer;
     }
 
     public bool HandleOffer(TradeOffer offer) {
 
+        var itemOffered = sellingItems.Find(i => i.item.id == offer.item.id);
+        var acceptedOffer = false;
+        if (itemOffered != null) {
+            var basePrice = itemOffered.item.price - itemOffered.item.useFactor; // precio aceptable
+            if (offer.priceOffer > basePrice)
+            {
+                // aceptar oferta
+                acceptedOffer = true;
+            }
+            else if(offer.priceOffer < basePrice) {
+                var offerAffinity = (humor.Value + playerData.affinity) / 2;
+                if (Mathf.Abs(offerAffinity) > 5)
+                {
+                    // acepta oferta
+                    acceptedOffer = true;
+                }
+                else {
+                    // rechazar oferta
+                    acceptedOffer = false;
+                    //bajar humor
+                    DecreaseMood(1);
+                }
+            }
+            
+        }
 
-        return false;
+        return acceptedOffer;
     }
 
 
@@ -46,14 +97,14 @@ public class NPC : MonoBehaviour
         newItem.weight = 10.5f;
         newItem.space = 2;
 
-        NPC testNpc = new NPC();
+        NPC testNpc = this;
         testNpc.npcName = "Juanito";
-        testNpc.humor = 3;
-        testNpc.affinity = 5;
+        testNpc.humor.Value = 10;
 
         Trade npcTrade = new Trade{ 
             npc = testNpc,
-            item = newItem
+            item = newItem,
+            expectedOffer = 10
         };
 
         TradeEvents.TriggerTradeReceived(npcTrade);

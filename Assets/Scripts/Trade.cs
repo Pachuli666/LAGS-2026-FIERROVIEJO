@@ -5,4 +5,5 @@ public class Trade
 {
     public Item item;
     public NPC npc;
+    public int expectedOffer;
 }

@@ -9,10 +9,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dab351824233e0a448bb9d7d2a4fac8e, type: 3}
-  m_Name: PlayerData
-  m_EditorClassIdentifier: Assembly-CSharp::PlayerInfoSO
-  money: 5
-  affinity: 5
-  maxInventorySpace: 10
-  items: []
+  m_Script: {fileID: 11500000, guid: 30fc4f74e47dd53498cd19f036c003df, type: 3}
+  m_Name: lavadora
+  m_EditorClassIdentifier: Assembly-CSharp::ItemSO
+  item:
+    id: 001
+    name: Lavadora
+    weight: 5
+    useFactor: 2
+    space: 2
+    price: 10

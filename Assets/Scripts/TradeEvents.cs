@@ -7,8 +7,7 @@ public class TradeEvents : MonoBehaviour
     public static event Action<TradeOffer> OnSendTradeOffer;
     public static event Action<TradeOffer> OnAcceptTradeOffer;
     public static event Action<TradeOffer> OnCancelTradeOffer;
-    public static event Action<TradeOffer> OnReactOffer;
-    public static event Action<TradeOffer> OnUpdateOffer;
+    public static event Action<Trade, TradeOffer> OnUpdateOffer;
 
 
     public static void TriggerTradeReceived(Trade trade) {
@@ -27,12 +26,8 @@ public class TradeEvents : MonoBehaviour
         OnCancelTradeOffer?.Invoke(offer);
     }
 
-    public static void TriggerReactOffer(TradeOffer offer) {
-        OnReactOffer?.Invoke(offer);
-    }
-
-    public static void TriggerUpdateOffer(TradeOffer offer) {
-        OnUpdateOffer?.Invoke(offer);
+    public static void TriggerUpdateOffer(Trade trade, TradeOffer offer) {
+        OnUpdateOffer?.Invoke(trade, offer);
     }
 
 }
