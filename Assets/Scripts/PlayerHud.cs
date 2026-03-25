@@ -20,7 +20,7 @@ public class PlayerHud : MonoBehaviour
         moneyTxt.text = $"Dinero: {playerData.money.Value}";
     }
 
-    public void ChangeMoney(int value) {
+    public void ChangeMoney(float value) {
         moneyTxt.text = $"Dinero: {value}";
         Debug.Log("Dinero Cambio");
     }

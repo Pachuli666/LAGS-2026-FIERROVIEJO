@@ -30,13 +30,12 @@ public class NPC : MonoBehaviour
     private void OnDisable()
     {
         TradeEvents.OnUpdateOffer -= ReactOffer;
-
     }
 
     private void Update()
     {
         if (Keyboard.current.spaceKey.wasPressedThisFrame) {
-            GenerateOffer();
+            ChatarraShop.instance.PotentialEarnings = playerData.CalculateKilos();//GenerateOffer();
         }
     }
 
