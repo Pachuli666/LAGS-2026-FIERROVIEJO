@@ -35,7 +35,8 @@ public class NPC : MonoBehaviour
     private void Update()
     {
         if (Keyboard.current.spaceKey.wasPressedThisFrame) {
-            ChatarraShop.instance.PotentialEarnings = playerData.CalculateKilos();//GenerateOffer();
+            GenerateOffer();
+            //ChatarraShop.instance.PotentialEarnings = playerData.CalculateKilos(); 
         }
     }
 

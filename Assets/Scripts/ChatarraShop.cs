@@ -8,7 +8,7 @@ public class ChatarraShop : MonoBehaviour
     [SerializeField]
     private PlayerInfoSO playerData;
 
-    public float priceByKilo = 0.30f;
+    public float priceByKilo = 0.30f; // pesos
 
     [SerializeField]
     private Bindable<float> potentialEarnings;

@@ -14,16 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerInfoSO
   affinity: 5
   maxInventorySpace: 10
-  items:
-  - id: 001
-    name: akjs
-    weight: 3
-    useFactor: 2
-    space: 1
-    price: 50
-  - id: 002
-    name: akjs
-    weight: 5
-    useFactor: 3
-    space: 2
-    price: 50
+  items: []
