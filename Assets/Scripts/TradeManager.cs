@@ -2,6 +2,12 @@ using NUnit.Framework;
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum TradeStatus { 
+    NONE,
+    ACCEPTED,
+    REJECTED
+}
+
 public class TradeManager : MonoBehaviour
 {
     public static TradeManager Instance { get; private set; }
@@ -10,9 +16,14 @@ public class TradeManager : MonoBehaviour
     private TradeOffer currentOffer;
 
     [SerializeField]
+    private Trade currentTrade;
+
+    [SerializeField]
     private PlayerInfoSO playerData;
 
     private List<TradeOffer> tradeHistorial { get; set; }
+
+    public TradeStatus status = TradeStatus.NONE;
 
 
     private void Awake()
@@ -25,53 +36,69 @@ public class TradeManager : MonoBehaviour
     private void OnEnable()
     {
         TradeEvents.OnReceiveTrade += TradeReceived;
-        TradeEvents.OnSendTradeOffer += SendOffer;
     }
 
     private void OnDisable()
     {
         TradeEvents.OnReceiveTrade -= TradeReceived;
-        TradeEvents.OnSendTradeOffer -= SendOffer;
     }
 
     public void LowerOffer() {
         if (currentOffer.priceOffer < 1) return;
         currentOffer.priceOffer -= 1;
-        TradeEvents.TriggerUpdateOffer(currentOffer);
+        
+        TradeEvents.TriggerUpdateOffer(currentTrade, currentOffer);
     }
 
     public void UpperOffer() {
         currentOffer.priceOffer += 1;
-        TradeEvents.TriggerUpdateOffer(currentOffer);
+        TradeEvents.TriggerUpdateOffer(currentTrade, currentOffer);
     }
 
-    public void AcceptOffer() { 
-    
+    public void OfferAccepted() {
+        if (playerData.CanAfford(currentOffer.priceOffer)) {
+            // Comprar articulo
+            playerData.DeductMoney(currentOffer.priceOffer);
+
+        }
     }
 
-    public void RejectOffer() { 
-    
+    public void OfferRejected() {
+        UIManager.instance.ClosePanel();
     }
 
     void TradeReceived(Trade trade) {
+        currentTrade = trade;
         currentOffer.item = trade.item;
         currentOffer.npc = trade.npc;
-
+        currentOffer.priceOffer = trade.expectedOffer;
         UIManager.instance.OpenPanel();
     }
 
-    void SendOffer(TradeOffer offer) {
+    public void TryOffer() {
 
-        bool accepted = offer.npc.HandleOffer(offer);
+        bool accepted = currentOffer.npc.HandleOffer(currentOffer);
 
         if (accepted)
         {
-            playerData.items.Add(offer.item);
+            // llamar a OfferAccepted
+            status = TradeStatus.ACCEPTED;
+            Debug.Log("NPC acepto tu oferta");
         }
         else {
-            UIManager.instance.ClosePanel();
+            // llamar a offerRejected
+            status = TradeStatus.REJECTED;
+            Debug.Log("NPC no le gusto tu oferta");
         }
 
+    }
+
+    public void SendOffer() {
+
+        // Oferta oficial no se puede cancelar
+        bool finalChoice = currentOffer.npc.HandleOffer(currentOffer);
+
+        
     }
     
 }

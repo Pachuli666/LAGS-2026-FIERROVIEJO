@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class BodyBounce : MonoBehaviour
+public class TruckBounce : MonoBehaviour
 {
     [Header("Bounce Settings")]
     public float amplitude = 0.02f;  // que tan alto sube y baja

@@ -26,24 +26,23 @@ public class TradeUI : MonoBehaviour
     private void OnEnable()
     {
         TradeEvents.OnReceiveTrade += Populate;
-        TradeEvents.OnReactOffer += Refresh;
         TradeEvents.OnUpdateOffer += Refresh;
     }
 
     private void OnDisable()
     {
         TradeEvents.OnReceiveTrade -= Populate;
-        TradeEvents.OnReactOffer -= Refresh;
         TradeEvents.OnUpdateOffer -= Refresh;
     }
 
     void Populate(Trade trade) {
-        offerText.text = trade.item.price.ToString();
+        offerText.text = trade.expectedOffer.ToString();
         npcNameTxt.text = trade.npc.npcName;
-        npcHumor.text = trade.npc.humor.ToString();
+        npcHumor.text = trade.npc.humor.Value.ToString();
     }
 
-    void Refresh(TradeOffer offer) {
+    void Refresh(Trade trade, TradeOffer offer) {
+        npcHumor.text = offer.npc.humor.Value.ToString();
         offerText.text = offer.priceOffer.ToString();
     }
 
