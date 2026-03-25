@@ -54,11 +54,11 @@ public class HouseSpawner : MonoBehaviour
             float z = startZ - spacing * i;
             if (z < roadZMin) break;
 
-            // Lado original
-            Instantiate(housePrefab, new Vector3(posX, posY, z), rotOriginal);
+            // Lado original — hijo de este objeto
+            Instantiate(housePrefab, new Vector3(posX, posY, z), rotOriginal, transform);
 
-            // Lado espejo con rotacion en 0
-            Instantiate(housePrefab, new Vector3(mirrorX, posY, z), rotMirror);
+            // Lado espejo con rotacion en 0 — hijo de este objeto
+            Instantiate(housePrefab, new Vector3(mirrorX, posY, z), rotMirror, transform);
 
             i++;
         }
