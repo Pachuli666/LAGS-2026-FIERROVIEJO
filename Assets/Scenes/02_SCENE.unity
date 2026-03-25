@@ -129,6 +129,8 @@ GameObject:
   m_Component:
   - component: {fileID: 191687929}
   - component: {fileID: 191687930}
+  - component: {fileID: 191687933}
+  - component: {fileID: 191687932}
   m_Layer: 0
   m_Name: Cell_0_2_0
   m_TagString: Untagged
@@ -210,6 +212,39 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+--- !u!65 &191687932
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 191687928}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 4.128621}
+  m_Center: {x: 1.25, y: 4, z: -2}
+--- !u!114 &191687933
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 191687928}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 646c91f07e2ea6f4880fd672c9547372, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TetrisCell
 --- !u!1 &203844586
 GameObject:
   m_ObjectHideFlags: 0
@@ -347,6 +382,8 @@ GameObject:
   m_Component:
   - component: {fileID: 344080752}
   - component: {fileID: 344080753}
+  - component: {fileID: 344080756}
+  - component: {fileID: 344080755}
   m_Layer: 0
   m_Name: Cell_1_3_0
   m_TagString: Untagged
@@ -428,6 +465,39 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+--- !u!65 &344080755
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 344080751}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 4.128621}
+  m_Center: {x: 3.75, y: 2, z: -2}
+--- !u!114 &344080756
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 344080751}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 646c91f07e2ea6f4880fd672c9547372, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TetrisCell
 --- !u!1 &447451718
 GameObject:
   m_ObjectHideFlags: 0
@@ -438,6 +508,8 @@ GameObject:
   m_Component:
   - component: {fileID: 447451719}
   - component: {fileID: 447451720}
+  - component: {fileID: 447451723}
+  - component: {fileID: 447451722}
   m_Layer: 0
   m_Name: Cell_2_0_0
   m_TagString: Untagged
@@ -519,6 +591,39 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+--- !u!65 &447451722
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 447451718}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 4.128621}
+  m_Center: {x: -3.75, y: 0, z: -2}
+--- !u!114 &447451723
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 447451718}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 646c91f07e2ea6f4880fd672c9547372, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TetrisCell
 --- !u!1 &514686259
 GameObject:
   m_ObjectHideFlags: 0
@@ -550,7 +655,6 @@ Transform:
   m_Children:
   - {fileID: 1171450278}
   - {fileID: 919522982}
-  - {fileID: 1884784253}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!1 &739139246
@@ -563,6 +667,8 @@ GameObject:
   m_Component:
   - component: {fileID: 739139247}
   - component: {fileID: 739139248}
+  - component: {fileID: 739139251}
+  - component: {fileID: 739139250}
   m_Layer: 0
   m_Name: Cell_4_2_0
   m_TagString: Untagged
@@ -644,6 +750,39 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+--- !u!65 &739139250
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 739139246}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 4.128621}
+  m_Center: {x: 1.25, y: -4, z: -2}
+--- !u!114 &739139251
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 739139246}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 646c91f07e2ea6f4880fd672c9547372, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TetrisCell
 --- !u!1 &791414972
 GameObject:
   m_ObjectHideFlags: 0
@@ -654,6 +793,8 @@ GameObject:
   m_Component:
   - component: {fileID: 791414973}
   - component: {fileID: 791414974}
+  - component: {fileID: 791414977}
+  - component: {fileID: 791414976}
   m_Layer: 0
   m_Name: Cell_1_1_0
   m_TagString: Untagged
@@ -735,6 +876,39 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+--- !u!65 &791414976
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 791414972}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 4.128621}
+  m_Center: {x: -1.25, y: 2, z: -2}
+--- !u!114 &791414977
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 791414972}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 646c91f07e2ea6f4880fd672c9547372, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TetrisCell
 --- !u!1 &816258854
 GameObject:
   m_ObjectHideFlags: 0
@@ -745,6 +919,8 @@ GameObject:
   m_Component:
   - component: {fileID: 816258855}
   - component: {fileID: 816258856}
+  - component: {fileID: 816258859}
+  - component: {fileID: 816258858}
   m_Layer: 0
   m_Name: Cell_3_1_0
   m_TagString: Untagged
@@ -826,6 +1002,39 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+--- !u!65 &816258858
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 816258854}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 4.128621}
+  m_Center: {x: -1.25, y: -2, z: -2}
+--- !u!114 &816258859
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 816258854}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 646c91f07e2ea6f4880fd672c9547372, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TetrisCell
 --- !u!1 &817857035
 GameObject:
   m_ObjectHideFlags: 0
@@ -836,6 +1045,8 @@ GameObject:
   m_Component:
   - component: {fileID: 817857036}
   - component: {fileID: 817857037}
+  - component: {fileID: 817857040}
+  - component: {fileID: 817857039}
   m_Layer: 0
   m_Name: Cell_3_3_0
   m_TagString: Untagged
@@ -917,6 +1128,39 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+--- !u!65 &817857039
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 817857035}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 4.128621}
+  m_Center: {x: 3.75, y: -2, z: -2}
+--- !u!114 &817857040
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 817857035}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 646c91f07e2ea6f4880fd672c9547372, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TetrisCell
 --- !u!1 &836336779
 GameObject:
   m_ObjectHideFlags: 0
@@ -927,6 +1171,8 @@ GameObject:
   m_Component:
   - component: {fileID: 836336780}
   - component: {fileID: 836336781}
+  - component: {fileID: 836336783}
+  - component: {fileID: 836336782}
   m_Layer: 0
   m_Name: Cell_0_0_0
   m_TagString: Untagged
@@ -1008,49 +1254,82 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+--- !u!114 &836336782
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 836336779}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 646c91f07e2ea6f4880fd672c9547372, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TetrisCell
+--- !u!65 &836336783
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 836336779}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 4.1286206}
+  m_Center: {x: -3.75, y: 4, z: -2}
 --- !u!1001 &889632825
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 514686260}
+    m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: ea04d909892632f43851d3587806a666, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.0048586
+      value: 0.035
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: ea04d909892632f43851d3587806a666, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.0048586
+      value: 0.035
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: ea04d909892632f43851d3587806a666, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.0048586
+      value: 0.035
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: ea04d909892632f43851d3587806a666, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.69672
+      value: -9.43
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: ea04d909892632f43851d3587806a666, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.307
+      value: 1.02
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: ea04d909892632f43851d3587806a666, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1.2253437
+      value: -16.16
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: ea04d909892632f43851d3587806a666, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: ea04d909892632f43851d3587806a666, type: 3}
-      propertyPath: m_LocalRotation.x
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: ea04d909892632f43851d3587806a666, type: 3}
-      propertyPath: m_LocalRotation.y
+      propertyPath: m_LocalRotation.x
       value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: ea04d909892632f43851d3587806a666, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: ea04d909892632f43851d3587806a666, type: 3}
       propertyPath: m_LocalRotation.z
@@ -1070,7 +1349,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: ea04d909892632f43851d3587806a666, type: 3}
       propertyPath: m_ConstrainProportionsScale
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -7511558181221131132, guid: ea04d909892632f43851d3587806a666, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
@@ -1080,6 +1359,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Lavadora_v1
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: ea04d909892632f43851d3587806a666, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: ea04d909892632f43851d3587806a666, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: ea04d909892632f43851d3587806a666, type: 3}
+      propertyPath: m_TagString
+      value: Asset
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1087,6 +1378,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: ea04d909892632f43851d3587806a666, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1884784254}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: ea04d909892632f43851d3587806a666, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1884784257}
   m_SourcePrefab: {fileID: 100100000, guid: ea04d909892632f43851d3587806a666, type: 3}
 --- !u!1001 &919522981
 PrefabInstance:
@@ -1301,6 +1595,8 @@ GameObject:
   m_Component:
   - component: {fileID: 997592268}
   - component: {fileID: 997592269}
+  - component: {fileID: 997592272}
+  - component: {fileID: 997592271}
   m_Layer: 0
   m_Name: Cell_4_0_0
   m_TagString: Untagged
@@ -1382,6 +1678,39 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+--- !u!65 &997592271
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 997592267}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 4.128621}
+  m_Center: {x: -3.75, y: -4, z: -2}
+--- !u!114 &997592272
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 997592267}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 646c91f07e2ea6f4880fd672c9547372, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TetrisCell
 --- !u!1 &1002196397
 GameObject:
   m_ObjectHideFlags: 0
@@ -1392,6 +1721,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1002196398}
   - component: {fileID: 1002196399}
+  - component: {fileID: 1002196402}
+  - component: {fileID: 1002196401}
   m_Layer: 0
   m_Name: Cell_3_0_0
   m_TagString: Untagged
@@ -1473,6 +1804,39 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+--- !u!65 &1002196401
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1002196397}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 4.128621}
+  m_Center: {x: -3.75, y: -2, z: -2}
+--- !u!114 &1002196402
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1002196397}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 646c91f07e2ea6f4880fd672c9547372, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TetrisCell
 --- !u!1 &1087992693
 GameObject:
   m_ObjectHideFlags: 0
@@ -1483,6 +1847,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1087992694}
   - component: {fileID: 1087992695}
+  - component: {fileID: 1087992698}
+  - component: {fileID: 1087992697}
   m_Layer: 0
   m_Name: Cell_4_3_0
   m_TagString: Untagged
@@ -1564,6 +1930,39 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+--- !u!65 &1087992697
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1087992693}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 4.128621}
+  m_Center: {x: 3.75, y: -4, z: -2}
+--- !u!114 &1087992698
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1087992693}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 646c91f07e2ea6f4880fd672c9547372, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TetrisCell
 --- !u!1 &1126395562
 GameObject:
   m_ObjectHideFlags: 0
@@ -1574,6 +1973,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1126395563}
   - component: {fileID: 1126395564}
+  - component: {fileID: 1126395567}
+  - component: {fileID: 1126395566}
   m_Layer: 0
   m_Name: Cell_2_1_0
   m_TagString: Untagged
@@ -1655,6 +2056,39 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+--- !u!65 &1126395566
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1126395562}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 4.128621}
+  m_Center: {x: -1.25, y: 0, z: -2}
+--- !u!114 &1126395567
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1126395562}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 646c91f07e2ea6f4880fd672c9547372, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TetrisCell
 --- !u!1 &1154120897
 GameObject:
   m_ObjectHideFlags: 0
@@ -1665,6 +2099,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1154120898}
   - component: {fileID: 1154120899}
+  - component: {fileID: 1154120902}
+  - component: {fileID: 1154120901}
   m_Layer: 0
   m_Name: Cell_0_1_0
   m_TagString: Untagged
@@ -1746,6 +2182,39 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+--- !u!65 &1154120901
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1154120897}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 4.128621}
+  m_Center: {x: -1.25, y: 4, z: -2}
+--- !u!114 &1154120902
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1154120897}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 646c91f07e2ea6f4880fd672c9547372, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TetrisCell
 --- !u!1001 &1171450277
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1822,6 +2291,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1274349278}
   - component: {fileID: 1274349279}
+  - component: {fileID: 1274349282}
+  - component: {fileID: 1274349281}
   m_Layer: 0
   m_Name: Cell_2_2_0
   m_TagString: Untagged
@@ -1903,6 +2374,39 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+--- !u!65 &1274349281
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1274349277}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 4.128621}
+  m_Center: {x: 1.25, y: 0, z: -2}
+--- !u!114 &1274349282
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1274349277}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 646c91f07e2ea6f4880fd672c9547372, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TetrisCell
 --- !u!1 &1293974983
 GameObject:
   m_ObjectHideFlags: 0
@@ -2008,7 +2512,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b32b0e95b51e2474a9af5ffac52aa8d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TetrisUI
-  active: 
+  cells: []
 --- !u!95 &1293974987
 Animator:
   serializedVersion: 7
@@ -2041,6 +2545,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1361176666}
   - component: {fileID: 1361176667}
+  - component: {fileID: 1361176670}
+  - component: {fileID: 1361176669}
   m_Layer: 0
   m_Name: Cell_4_1_0
   m_TagString: Untagged
@@ -2122,6 +2628,39 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+--- !u!65 &1361176669
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1361176665}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 4.128621}
+  m_Center: {x: -1.25, y: -4, z: -2}
+--- !u!114 &1361176670
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1361176665}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 646c91f07e2ea6f4880fd672c9547372, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TetrisCell
 --- !u!1 &1499884405
 GameObject:
   m_ObjectHideFlags: 0
@@ -2131,7 +2670,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1499884407}
-  - component: {fileID: 1499884406}
   m_Layer: 0
   m_Name: Green_Sqares
   m_TagString: Untagged
@@ -2139,19 +2677,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1499884406
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1499884405}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b32b0e95b51e2474a9af5ffac52aa8d9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::TetrisGrid
-  active: 
 --- !u!4 &1499884407
 Transform:
   m_ObjectHideFlags: 0
@@ -2276,6 +2801,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1767081662}
   - component: {fileID: 1767081663}
+  - component: {fileID: 1767081666}
+  - component: {fileID: 1767081665}
   m_Layer: 0
   m_Name: Cell_1_0_0
   m_TagString: Untagged
@@ -2357,6 +2884,39 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+--- !u!65 &1767081665
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1767081661}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 4.128621}
+  m_Center: {x: -3.75, y: 2, z: -2}
+--- !u!114 &1767081666
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1767081661}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 646c91f07e2ea6f4880fd672c9547372, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TetrisCell
 --- !u!1 &1847218588
 GameObject:
   m_ObjectHideFlags: 0
@@ -2367,6 +2927,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1847218589}
   - component: {fileID: 1847218590}
+  - component: {fileID: 1847218593}
+  - component: {fileID: 1847218592}
   m_Layer: 0
   m_Name: Cell_3_2_0
   m_TagString: Untagged
@@ -2448,6 +3010,39 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+--- !u!65 &1847218592
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1847218588}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 4.128621}
+  m_Center: {x: 1.25, y: -2, z: -2}
+--- !u!114 &1847218593
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1847218588}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 646c91f07e2ea6f4880fd672c9547372, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TetrisCell
 --- !u!1 &1868311489
 GameObject:
   m_ObjectHideFlags: 0
@@ -2458,6 +3053,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1868311490}
   - component: {fileID: 1868311491}
+  - component: {fileID: 1868311494}
+  - component: {fileID: 1868311493}
   m_Layer: 0
   m_Name: Cell_0_3_0
   m_TagString: Untagged
@@ -2539,14 +3136,42 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+--- !u!65 &1868311493
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1868311489}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 4.128621}
+  m_Center: {x: 3.75, y: 4, z: -2}
+--- !u!114 &1868311494
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1868311489}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 646c91f07e2ea6f4880fd672c9547372, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TetrisCell
 --- !u!1 &1884784252 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: ea04d909892632f43851d3587806a666, type: 3}
-  m_PrefabInstance: {fileID: 889632825}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &1884784253 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: ea04d909892632f43851d3587806a666, type: 3}
   m_PrefabInstance: {fileID: 889632825}
   m_PrefabAsset: {fileID: 0}
 --- !u!65 &1884784254
@@ -2564,12 +3189,39 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
   m_Size: {x: 100, y: 114.456894, z: 100}
   m_Center: {x: -200.00002, y: 57.228477, z: 0}
+--- !u!54 &1884784257
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1884784252}
+  serializedVersion: 5
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &1998749388
 GameObject:
   m_ObjectHideFlags: 0
@@ -2580,6 +3232,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1998749389}
   - component: {fileID: 1998749390}
+  - component: {fileID: 1998749393}
+  - component: {fileID: 1998749392}
   m_Layer: 0
   m_Name: Cell_1_2_0
   m_TagString: Untagged
@@ -2661,6 +3315,39 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+--- !u!65 &1998749392
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1998749388}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 4.128621}
+  m_Center: {x: 1.25, y: 2, z: -2}
+--- !u!114 &1998749393
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1998749388}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 646c91f07e2ea6f4880fd672c9547372, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TetrisCell
 --- !u!1 &2011115275
 GameObject:
   m_ObjectHideFlags: 0
@@ -2671,6 +3358,8 @@ GameObject:
   m_Component:
   - component: {fileID: 2011115276}
   - component: {fileID: 2011115277}
+  - component: {fileID: 2011115280}
+  - component: {fileID: 2011115279}
   m_Layer: 0
   m_Name: Cell_2_3_0
   m_TagString: Untagged
@@ -2752,6 +3441,39 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+--- !u!65 &2011115279
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2011115275}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 4.128621}
+  m_Center: {x: 3.75, y: 0, z: -2}
+--- !u!114 &2011115280
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2011115275}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 646c91f07e2ea6f4880fd672c9547372, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TetrisCell
 --- !u!1 &2109999347
 GameObject:
   m_ObjectHideFlags: 0
@@ -2849,6 +3571,7 @@ SceneRoots:
   m_Roots:
   - {fileID: 961739753}
   - {fileID: 203844589}
+  - {fileID: 889632825}
   - {fileID: 514686260}
   - {fileID: 1766697701}
   - {fileID: 1293974985}
