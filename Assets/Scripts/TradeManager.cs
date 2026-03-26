@@ -64,7 +64,7 @@ public class TradeManager : MonoBehaviour
     }
 
     public void OfferRejected() {
-        UIsSwitch.instance.ClosePanel();
+        UIManager.instance.ClosePanel();
     }
 
     void TradeReceived(Trade trade) {
@@ -72,7 +72,7 @@ public class TradeManager : MonoBehaviour
         currentOffer.item = trade.item;
         currentOffer.npc = trade.npc;
         currentOffer.priceOffer = trade.expectedOffer;
-        UIsSwitch.instance.OpenPanel();
+        UIManager.instance.OpenPanel();
     }
 
     public void TryOffer() {

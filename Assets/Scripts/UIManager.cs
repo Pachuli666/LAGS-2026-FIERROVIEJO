@@ -1,8 +1,8 @@
 using UnityEngine;
 
-public class UIsSwitch : MonoBehaviour
+public class UIManager : MonoBehaviour
 {
-    public static UIsSwitch instance { get; private set; }
+    public static UIManager instance { get; private set; }
 
     [SerializeField]
     private GameObject tradePanel;
