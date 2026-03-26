@@ -1,10 +1,10 @@
 using UnityEngine;
 
-public class IconBounce : MonoBehaviour
+public class IconMove : MonoBehaviour
 {
     [Header("Bounce Settings")]
-    public float amplitude = 0.02f;  // que tan alto sube y baja
-    public float frequency = 8f;     // velocidad del rebote (RPM del motor)
+    public float amplitude = 0.02f;  // qué tan alto sube y baja
+    public float frequency = 8f;     // velocidad del rebote
 
     private Vector3 startLocalPos;
 

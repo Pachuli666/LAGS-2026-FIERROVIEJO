@@ -9,7 +9,12 @@ public class ParkingTrigger : MonoBehaviour
     void OnTriggerEnter(Collider other)
     {
         if (!other.CompareTag("Player")) return;
+
         spawner.OnTruckEntered();
+
+        // Activar UI de venta al entrar al parking
+        UISwitch.Instance.ShowSaleUI();
+
         Destroy(this);
     }
 }

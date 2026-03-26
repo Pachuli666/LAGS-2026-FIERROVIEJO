@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2884202555879968949}
   - component: {fileID: 5525184204441928549}
+  - component: {fileID: 6156367215901112344}
   m_Layer: 0
   m_Name: INTERRROGATION_PNG_0
   m_TagString: Untagged
@@ -91,6 +92,20 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+--- !u!114 &6156367215901112344
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 781577534923682304}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1873e86895876d04c8493c1c2430797e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::IconMove
+  amplitude: 10
+  frequency: 8
 --- !u!1 &862605958665995714
 GameObject:
   m_ObjectHideFlags: 0
@@ -194,6 +209,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7851154420788560298}
   - component: {fileID: 2770112868880568829}
+  - component: {fileID: 2752838718804767633}
   m_Layer: 0
   m_Name: ADMIRATION_PNG_0
   m_TagString: Untagged
@@ -275,6 +291,20 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+--- !u!114 &2752838718804767633
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3703184231018437821}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1873e86895876d04c8493c1c2430797e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::IconMove
+  amplitude: 10
+  frequency: 8
 --- !u!1 &4445211890963383762
 GameObject:
   m_ObjectHideFlags: 0
