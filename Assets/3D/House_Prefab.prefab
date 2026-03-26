@@ -75,5 +75,31 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: f96cdf9a472fe25409a87476c103d5e4, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1177099693407477301}
   m_SourcePrefab: {fileID: 100100000, guid: f96cdf9a472fe25409a87476c103d5e4, type: 3}
+--- !u!1 &1707723025077429616 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: f96cdf9a472fe25409a87476c103d5e4, type: 3}
+  m_PrefabInstance: {fileID: 1977754078003058721}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1177099693407477301
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1707723025077429616}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af1d5f1b54b6f5a448ec1e29475b798d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::HouseEvents
+  admiration: {fileID: 0}
+  interrogation: {fileID: 0}
+  parkingZone: {fileID: 0}
+  minInterval: 5
+  maxInterval: 15
+  availabilityChance: 0.6
