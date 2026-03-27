@@ -428,8 +428,8 @@ Transform:
   - {fileID: 855275940}
   - {fileID: 674952632}
   - {fileID: 1119413736}
+  - {fileID: 1328816562}
   - {fileID: 1410514312}
-  - {fileID: 1431439224}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &82510789
@@ -445,8 +445,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UISwitch
   driveUI: {fileID: 674952631}
-  saleUI: {fileID: 1119413735}
+  tradeUI: {fileID: 1119413735}
   inventoryUI: {fileID: 1525091422}
+  saleUI: {fileID: 1328816561}
   mainCamera: {fileID: 330585546}
 --- !u!1001 &111884447
 PrefabInstance:
@@ -1625,6 +1626,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1003589122}
+  - {fileID: 1025247772}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!54 &463407702
@@ -4242,6 +4244,72 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1005207889}
   m_CullTransparentMesh: 1
+--- !u!1 &1025247771
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1025247772}
+  - component: {fileID: 1025247774}
+  - component: {fileID: 1025247773}
+  m_Layer: 0
+  m_Name: SaleTrigger
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1025247772
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1025247771}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 463407701}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1025247773
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1025247771}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 976df19a3ff8a4744b44fb6dba2fec91, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SaleTrigger
+--- !u!65 &1025247774
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1025247771}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 9.985748, y: 15.368357, z: 0.15617217}
+  m_Center: {x: -0.050536476, y: 7.8485117, z: -4.922421}
 --- !u!1 &1040220288
 GameObject:
   m_ObjectHideFlags: 0
@@ -4583,7 +4651,7 @@ GameObject:
   - component: {fileID: 1119413736}
   - component: {fileID: 1119413737}
   m_Layer: 0
-  m_Name: SALE_UI
+  m_Name: TRADE_UI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5084,12 +5152,12 @@ GameObject:
   m_Component:
   - component: {fileID: 1328816562}
   m_Layer: 0
-  m_Name: HUDSHOP
+  m_Name: SALE_UI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1328816562
 Transform:
   m_ObjectHideFlags: 0
@@ -5099,12 +5167,12 @@ Transform:
   m_GameObject: {fileID: 1328816561}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -17.35272, y: -15.10649, z: -18.16391}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 547589647}
-  m_Father: {fileID: 1410514312}
+  m_Father: {fileID: 82510788}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1410514311
 GameObject:
@@ -5137,7 +5205,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1505690597}
-  - {fileID: 1328816562}
   m_Father: {fileID: 82510788}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1410514313
@@ -5211,37 +5278,6 @@ CapsuleCollider:
   m_Height: 31.77
   m_Direction: 1
   m_Center: {x: 0, y: 10.74, z: 0}
---- !u!1 &1431439223
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1431439224}
-  m_Layer: 0
-  m_Name: INVENTORY
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1431439224
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1431439223}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 82510788}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1434424728
 GameObject:
   m_ObjectHideFlags: 0
