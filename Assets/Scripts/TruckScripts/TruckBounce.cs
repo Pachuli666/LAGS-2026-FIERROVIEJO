@@ -17,7 +17,7 @@ public class TruckBounce : MonoBehaviour
     {
         // Pausar bounce cuando UIs estén activas
         if (UISwitch.Instance != null &&
-           (UISwitch.Instance.saleUI.activeSelf || UISwitch.Instance.inventoryUI.activeSelf))
+           (UISwitch.Instance.tradeUI.activeSelf || UISwitch.Instance.inventoryUI.activeSelf))
         {
             transform.localPosition = startLocalPos; // regresa a posición base
             return;

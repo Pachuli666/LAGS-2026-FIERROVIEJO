@@ -13,7 +13,7 @@ public class ParkingTrigger : MonoBehaviour
         spawner.OnTruckEntered();
 
         // Activar UI de venta al entrar al parking
-        UISwitch.Instance.ShowSaleUI();
+        UISwitch.Instance.ShowTradeUI();
 
         Destroy(this);
     }

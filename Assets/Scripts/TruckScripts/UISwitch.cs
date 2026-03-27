@@ -7,8 +7,9 @@ public class UISwitch : MonoBehaviour
 
     [Header("UIs")]
     public GameObject driveUI;
+    public GameObject tradeUI;
+    public GameObject inventoryUI;
     public GameObject saleUI;
-    public GameObject inventoryUI; // ← nueva
 
     [Header("Camera")]
     public Transform mainCamera;
@@ -25,30 +26,31 @@ public class UISwitch : MonoBehaviour
     void Start()
     {
         driveUI.SetActive(true);
-        saleUI.SetActive(false);
+        tradeUI.SetActive(false);
         inventoryUI.SetActive(false);
+        saleUI.SetActive(false);
+            
     }
 
     void Update()
     {
-        if (Keyboard.current.spaceKey.wasPressedThisFrame)
-        {
-            if (saleUI.activeSelf)
-                ShowInventoryUI();        // Sale UI → Inventario
-            else if (inventoryUI.activeSelf)
-                ShowDriveUI();            // Inventario → Drive
-        }
+        if (Keyboard.current == null) return;
+        if (!Keyboard.current.spaceKey.wasPressedThisFrame) return;
+
+        if (tradeUI.activeSelf) ShowInventoryUI();
+        else if (inventoryUI.activeSelf) ShowDriveUI();
+        else if (saleUI.activeSelf) ShowDriveUI();
     }
 
-    public void ShowSaleUI()
+    public void ShowTradeUI()
     {
         driveUI.SetActive(false);
-        saleUI.SetActive(true);
+        tradeUI.SetActive(true);
     }
 
     void ShowInventoryUI()
     {
-        saleUI.SetActive(false);
+        tradeUI.SetActive(false);
         inventoryUI.SetActive(true);
         SetCamera(inventoryCamPos, inventoryCamRot);
     }
@@ -56,9 +58,17 @@ public class UISwitch : MonoBehaviour
     public void ShowDriveUI()
     {
         inventoryUI.SetActive(false);
+        tradeUI.SetActive(false);
         saleUI.SetActive(false);
         driveUI.SetActive(true);
         SetCamera(driveCamPos, driveCamRot);
+    }
+
+    public void ShowSaleUI()
+    {
+        inventoryUI.SetActive(false);
+        tradeUI.SetActive(false);
+        saleUI.SetActive(true);
     }
 
     void SetCamera(Vector3 pos, Vector3 rot)

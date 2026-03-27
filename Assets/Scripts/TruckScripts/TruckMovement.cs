@@ -23,7 +23,9 @@ public class TruckMovement : MonoBehaviour
     }
 
     bool IsUIOpen() => UISwitch.Instance != null &&
-                       (UISwitch.Instance.inventoryUI.activeSelf || UISwitch.Instance.saleUI.activeSelf);
+                   (UISwitch.Instance.inventoryUI.activeSelf ||
+                    UISwitch.Instance.tradeUI.activeSelf ||
+                    UISwitch.Instance.saleUI.activeSelf);
 
     void Update()
     {
