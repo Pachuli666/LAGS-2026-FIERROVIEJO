@@ -6,22 +6,34 @@ public class MoveAsset : MonoBehaviour
     public float speed = 5f;
     private static int selectedIndex = 0;
     private static MoveAsset[] all;
+    private Rigidbody rb;
+    private bool wasInInventoryMode = false;
 
     void Start()
     {
         all = FindObjectsByType<MoveAsset>(FindObjectsInactive.Exclude);
+        rb = GetComponent<Rigidbody>();
     }
 
     bool IsSelected() => all != null && all.Length > 0 && all[selectedIndex] == this;
 
+    bool InInventoryMode() => UISwitch.Instance != null && UISwitch.Instance.inventoryUI.activeSelf;
+
     void Update()
     {
-        // CORRECCIÓN AQUÍ: Solo funciona si el inventario ESTÁ activo
-        if (UISwitch.Instance == null || !UISwitch.Instance.inventoryUI.activeSelf) return;
+        bool inInventory = InInventoryMode();
+
+        // Cambiar kinematic cuando cambia el modo
+        if (rb != null && inInventory != wasInInventoryMode)
+        {
+            rb.isKinematic = inInventory;
+            wasInInventoryMode = inInventory;
+        }
+
+        if (!inInventory) return;
 
         if (Keyboard.current == null) return;
 
-        // Solo el primero de la lista procesa el cambio de selección
         if (all != null && all[0] == this)
             if (Keyboard.current.oKey.wasPressedThisFrame)
                 selectedIndex = (selectedIndex + 1) % all.Length;
