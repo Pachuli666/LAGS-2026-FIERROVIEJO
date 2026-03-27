@@ -1,0 +1,46 @@
+using UnityEngine;
+using UnityEngine.InputSystem;
+
+public class MoveAsset : MonoBehaviour
+{
+    public float speed = 5f;
+    private static int selectedIndex = 0;
+    private static MoveAsset[] all;
+
+    void Start()
+    {
+        all = FindObjectsByType<MoveAsset>(FindObjectsInactive.Exclude);
+    }
+
+    bool IsSelected() => all != null && all.Length > 0 && all[selectedIndex] == this;
+
+    void Update()
+    {
+        // CORRECCIÓN AQUÍ: Solo funciona si el inventario ESTÁ activo
+        if (UISwitch.Instance == null || !UISwitch.Instance.inventoryUI.activeSelf) return;
+
+        if (Keyboard.current == null) return;
+
+        // Solo el primero de la lista procesa el cambio de selección
+        if (all != null && all[0] == this)
+            if (Keyboard.current.oKey.wasPressedThisFrame)
+                selectedIndex = (selectedIndex + 1) % all.Length;
+
+        if (!IsSelected()) return;
+
+        float x = 0f, z = 0f;
+        if (Keyboard.current.wKey.isPressed) z = -1f;
+        if (Keyboard.current.sKey.isPressed) z = 1f;
+        if (Keyboard.current.aKey.isPressed) x = 1f;
+        if (Keyboard.current.dKey.isPressed) x = -1f;
+
+        transform.position += new Vector3(x, 0f, z) * speed * Time.deltaTime;
+    }
+
+    void OnDrawGizmos()
+    {
+        if (!Application.isPlaying || !IsSelected()) return;
+        Gizmos.color = Color.green;
+        Gizmos.DrawWireCube(transform.position, transform.localScale * 1.2f);
+    }
+}

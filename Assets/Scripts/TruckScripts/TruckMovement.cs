@@ -51,7 +51,8 @@ public class TruckMovement : MonoBehaviour
 
     void Update()
     {
-        if (UISwitch.Instance != null && UISwitch.Instance.saleUI.activeSelf || UISwitch.Instance.inventoryUI.activeSelf) return;
+        // Corrección de seguridad y sintaxis
+        if (UISwitch.Instance != null && (UISwitch.Instance.saleUI.activeSelf || UISwitch.Instance.inventoryUI.activeSelf)) return;
 
         if (Keyboard.current == null) return;
 
