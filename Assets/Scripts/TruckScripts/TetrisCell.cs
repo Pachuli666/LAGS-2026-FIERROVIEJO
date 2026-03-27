@@ -1,8 +1,9 @@
-using UnityEngine;
+﻿using UnityEngine;
 
 public class TetrisCell : MonoBehaviour
 {
     private SpriteRenderer sr;
+    private int assetsInside = 0; // ← contador
 
     void Awake()
     {
@@ -12,11 +13,19 @@ public class TetrisCell : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Asset")) sr.enabled = true;
+        if (!other.CompareTag("Asset")) return;
+        assetsInside++;
+        sr.enabled = true;
     }
 
     void OnTriggerExit(Collider other)
     {
-        if (other.CompareTag("Asset")) sr.enabled = false;
+        if (!other.CompareTag("Asset")) return;
+        assetsInside--;
+        if (assetsInside <= 0)
+        {
+            assetsInside = 0; // evita negativos
+            sr.enabled = false;
+        }
     }
 }

@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class IconMove : MonoBehaviour
+public class IconBounce : MonoBehaviour
 {
     [Header("Bounce Settings")]
     public float amplitude = 0.02f;  // qué tan alto sube y baja
