@@ -55,4 +55,21 @@ public class MoveAsset : MonoBehaviour
         Gizmos.color = Color.green;
         Gizmos.DrawWireCube(transform.position, transform.localScale * 1.2f);
     }
+
+    void OnDisable()
+    {
+        NotifyCells();
+    }
+
+    void OnDestroy()
+    {
+        NotifyCells();
+    }
+
+    void NotifyCells()
+    {
+        // Limpia todas las celdas cuando este asset se va
+        foreach (var cell in FindObjectsByType<TetrisCell>(FindObjectsInactive.Include))
+            cell.CleanDestroyedAssets();
+    }
 }

@@ -1,9 +1,10 @@
 ﻿using UnityEngine;
+using System.Collections.Generic;
 
 public class TetrisCell : MonoBehaviour
 {
     private SpriteRenderer sr;
-    private int assetsInside = 0; // ← contador
+    private HashSet<Collider> assetsInside = new HashSet<Collider>();
 
     void Awake()
     {
@@ -14,18 +15,26 @@ public class TetrisCell : MonoBehaviour
     void OnTriggerEnter(Collider other)
     {
         if (!other.CompareTag("Asset")) return;
-        assetsInside++;
-        sr.enabled = true;
+        assetsInside.Add(other);
+        UpdateVisual();
     }
 
     void OnTriggerExit(Collider other)
     {
         if (!other.CompareTag("Asset")) return;
-        assetsInside--;
-        if (assetsInside <= 0)
-        {
-            assetsInside = 0; // evita negativos
-            sr.enabled = false;
-        }
+        assetsInside.Remove(other);
+        UpdateVisual();
+    }
+
+    // Llámalo periódicamente o desde el GameManager
+    public void CleanDestroyedAssets()
+    {
+        assetsInside.RemoveWhere(c => c == null);
+        UpdateVisual();
+    }
+
+    void UpdateVisual()
+    {
+        sr.enabled = assetsInside.Count > 0;
     }
 }
