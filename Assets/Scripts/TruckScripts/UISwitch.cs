@@ -66,6 +66,7 @@ public class UISwitch : MonoBehaviour
 
     public void ShowSaleUI()
     {
+        driveUI.SetActive(false);
         inventoryUI.SetActive(false);
         tradeUI.SetActive(false);
         saleUI.SetActive(true);
