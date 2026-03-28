@@ -7261,8 +7261,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::TopeSpawner
   topePrefab: {fileID: 7780035149976677327, guid: b2a12b36a144068428920da73c9cf1f5, type: 3}
   calleRenderer: {fileID: 463407699}
-  cantidadTopes: 20
-  margenInicial: 20
+  cantidadTopes: 15
+  margenInicial: 10
+  distanciaMinima: 5
 --- !u!4 &1864229064
 Transform:
   m_ObjectHideFlags: 0
