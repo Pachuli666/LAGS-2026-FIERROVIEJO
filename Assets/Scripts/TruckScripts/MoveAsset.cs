@@ -16,14 +16,12 @@ public class MoveAsset : MonoBehaviour
     }
 
     bool IsSelected() => all != null && all.Length > 0 && all[selectedIndex] == this;
-
     bool InInventoryMode() => UISwitch.Instance != null && UISwitch.Instance.inventoryUI.activeSelf;
 
     void Update()
     {
         bool inInventory = InInventoryMode();
 
-        // Cambiar kinematic cuando cambia el modo
         if (rb != null && inInventory != wasInInventoryMode)
         {
             rb.isKinematic = inInventory;
@@ -31,7 +29,6 @@ public class MoveAsset : MonoBehaviour
         }
 
         if (!inInventory) return;
-
         if (Keyboard.current == null) return;
 
         if (all != null && all[0] == this)
@@ -54,22 +51,5 @@ public class MoveAsset : MonoBehaviour
         if (!Application.isPlaying || !IsSelected()) return;
         Gizmos.color = Color.green;
         Gizmos.DrawWireCube(transform.position, transform.localScale * 1.2f);
-    }
-
-    void OnDisable()
-    {
-        NotifyCells();
-    }
-
-    void OnDestroy()
-    {
-        NotifyCells();
-    }
-
-    void NotifyCells()
-    {
-        // Limpia todas las celdas cuando este asset se va
-        foreach (var cell in FindObjectsByType<TetrisCell>(FindObjectsInactive.Include))
-            cell.CleanDestroyedAssets();
     }
 }
