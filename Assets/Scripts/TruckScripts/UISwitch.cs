@@ -23,6 +23,16 @@ public class UISwitch : MonoBehaviour
 
     void Awake() { Instance = this; }
 
+    private void OnEnable()
+    {
+        TradeEvents.OnAcceptTradeOffer += initialConfig;
+    }
+
+    private void OnDisable()
+    {
+        TradeEvents.OnAcceptTradeOffer -= initialConfig;
+    }
+
     void Start()
     {
         driveUI.SetActive(true);
@@ -76,5 +86,9 @@ public class UISwitch : MonoBehaviour
     {
         mainCamera.localPosition = pos;
         mainCamera.localEulerAngles = rot;
+    }
+
+    void initialConfig(TradeOffer offer) {
+        ShowDriveUI();
     }
 }

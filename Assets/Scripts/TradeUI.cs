@@ -4,24 +4,33 @@ using UnityEngine.UI;
 
 public class TradeUI : MonoBehaviour
 {
-    [SerializeField]
-    private TMP_Text npcNameTxt;
 
     [SerializeField]
-    private TMP_Text offerText;
+    private TMP_Text npcNameTxt;
 
     [SerializeField]
     private RawImage npcImg;
 
     [SerializeField]
-    private Image itemImg;
+    private RawImage npcHumorImg;
 
     [SerializeField]
     private TMP_Text npcHumor;
 
     [SerializeField]
-    private RawImage npcHumorImg;
+    private TMP_Text offerText;
 
+    [SerializeField]
+    private Image itemImg;
+
+    [SerializeField]
+    private TMP_Text itemWeightTxt;
+
+    [SerializeField]
+    private TMP_Text itemSizeTxt;
+
+    [SerializeField]
+    private TMP_Text itemPriceTxt;
 
     private void OnEnable()
     {

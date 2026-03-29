@@ -9,7 +9,6 @@ public class NPC : MonoBehaviour
 
     public string npcName;
 
-    public int initialHumor;
     public Bindable<int> humor;
 
     public List<ItemSO> sellingItems;
@@ -17,13 +16,16 @@ public class NPC : MonoBehaviour
     public int lastOffer;
     public bool firstOffer = true;
 
+    public int Humor { get { return humor.Value; } set { humor.Value = value; } }
+
+
     public void IncreaseMood(int amount) => humor.Value += amount;
 
     public void DecreaseMood(int amount) => humor.Value = humor.Value == 1 ? 1: humor.Value -= amount;
 
     private void Awake()
     {
-        humor.Value = initialHumor;
+        Humor = Random.Range(5, 10);
     }
 
     private void OnEnable()
@@ -74,7 +76,7 @@ public class NPC : MonoBehaviour
                 acceptedOffer = true;
             }
             else if(offer.priceOffer < basePrice) {
-                var offerAffinity = (humor.Value + playerData.affinity) / 2;
+                var offerAffinity = (Humor + playerData.Affinity) / 2;
                 if (Mathf.Abs(offerAffinity) > 5)
                 {
                     // acepta oferta
