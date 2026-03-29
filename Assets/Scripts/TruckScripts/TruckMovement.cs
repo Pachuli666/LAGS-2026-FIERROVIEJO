@@ -57,7 +57,7 @@ public class TruckMovement : MonoBehaviour
 
     void CalculateLimits()
     {
-        if (roadPlane == null) { leftLimit = -3f; rightLimit = 3f; return; }
+        if (roadPlane == null) { leftLimit = -12f; rightLimit = 12f; return; }
 
         MeshFilter mf = roadPlane.GetComponent<MeshFilter>();
         if (mf != null && mf.sharedMesh != null)

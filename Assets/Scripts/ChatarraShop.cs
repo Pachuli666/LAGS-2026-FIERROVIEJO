@@ -43,7 +43,7 @@ public class ChatarraShop : MonoBehaviour
     }
 
     float Calculate() {
-        var earnings = playerData.CalculateKilos() * priceByKilo;
+        var earnings = playerData.Weight * priceByKilo;
         return earnings;
     }
 
@@ -64,7 +64,7 @@ public class ChatarraShop : MonoBehaviour
     }
     
     void UpdateWeight() {
-        weightTxt.text = $"Peso: {playerData.CalculateKilos()} kl";
+        weightTxt.text = $"Peso: {playerData.Weight} kl";
     }
 
 }

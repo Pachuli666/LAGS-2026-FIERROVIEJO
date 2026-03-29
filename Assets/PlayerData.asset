@@ -12,6 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dab351824233e0a448bb9d7d2a4fac8e, type: 3}
   m_Name: PlayerData
   m_EditorClassIdentifier: Assembly-CSharp::PlayerInfoSO
-  affinity: 5
   maxInventorySpace: 10
   items: []

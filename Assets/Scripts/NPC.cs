@@ -7,9 +7,8 @@ public class NPC : MonoBehaviour
     [SerializeField]
     private PlayerInfoSO playerData;
 
-    public string npcName { get; set; }
+    public string npcName;
 
-    [SerializeField]
     public Bindable<int> humor;
 
     public List<ItemSO> sellingItems;
@@ -17,18 +16,27 @@ public class NPC : MonoBehaviour
     public int lastOffer;
     public bool firstOffer = true;
 
+    public int Humor { get { return humor.Value; } set { humor.Value = value; } }
+
 
     public void IncreaseMood(int amount) => humor.Value += amount;
 
     public void DecreaseMood(int amount) => humor.Value = humor.Value == 1 ? 1: humor.Value -= amount;
 
+    private void Awake()
+    {
+        Humor = Random.Range(5, 10);
+    }
+
     private void OnEnable()
     {
+        TradeEvents.OnParking += GenerateOffer;
         TradeEvents.OnUpdateOffer += ReactOffer;
     }
 
     private void OnDisable()
     {
+        TradeEvents.OnParking -= GenerateOffer;
         TradeEvents.OnUpdateOffer -= ReactOffer;
     }
 
@@ -68,7 +76,7 @@ public class NPC : MonoBehaviour
                 acceptedOffer = true;
             }
             else if(offer.priceOffer < basePrice) {
-                var offerAffinity = (humor.Value + playerData.affinity) / 2;
+                var offerAffinity = (Humor + playerData.Affinity) / 2;
                 if (Mathf.Abs(offerAffinity) > 5)
                 {
                     // acepta oferta
@@ -98,7 +106,7 @@ public class NPC : MonoBehaviour
         newItem.space = 2;
 
         NPC testNpc = this;
-        testNpc.npcName = "Juanito";
+        //testNpc.npcName = "Juanito";
         testNpc.humor.Value = 10;
 
         Trade npcTrade = new Trade{ 

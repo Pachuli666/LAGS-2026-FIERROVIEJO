@@ -25,12 +25,15 @@ public class TradeManager : MonoBehaviour
 
     public TradeStatus status = TradeStatus.NONE;
 
+    public float initialMoney;
+
 
     private void Awake()
     {
         if (Instance == null) Instance = this;
         else Destroy(gameObject);
         currentOffer = new TradeOffer();
+        InitData();
     }
 
     private void OnEnable()
@@ -51,8 +54,10 @@ public class TradeManager : MonoBehaviour
     }
 
     public void UpperOffer() {
-        currentOffer.priceOffer += 1;
-        TradeEvents.TriggerUpdateOffer(currentTrade, currentOffer);
+        if (currentOffer.priceOffer <= playerData.Money) { 
+            currentOffer.priceOffer += 1;
+            TradeEvents.TriggerUpdateOffer(currentTrade, currentOffer);
+        }
     }
 
     public void OfferAccepted() {
@@ -72,7 +77,7 @@ public class TradeManager : MonoBehaviour
         currentOffer.item = trade.item;
         currentOffer.npc = trade.npc;
         currentOffer.priceOffer = trade.expectedOffer;
-        UIManager.instance.OpenPanel();
+        UISwitch.Instance.ShowTradeUI();
     }
 
     public void TryOffer() {
@@ -95,10 +100,28 @@ public class TradeManager : MonoBehaviour
 
     public void SendOffer() {
 
-        // Oferta oficial no se puede cancelar
         bool finalChoice = currentOffer.npc.HandleOffer(currentOffer);
+        // Oferta oficial no se puede cancelar
+        if (finalChoice && playerData.CanAfford(currentOffer.priceOffer))
+        {
+            EndTransaccion();
+            TradeEvents.TriggerAcceptOffer(currentOffer);
+        }
+        else {
+            currentOffer.npc.DecreaseMood(1);
+            TradeEvents.TriggerCancelOffer(currentOffer);
+        }   
+    }
 
-        
+    void InitData() {
+        playerData.Money = initialMoney;
+    }
+
+    void EndTransaccion() {
+
+        playerData.DeductMoney(currentOffer.priceOffer);
+        playerData.AddItem(currentOffer.item);
+        playerData.CalculateKilos();
     }
     
 }
