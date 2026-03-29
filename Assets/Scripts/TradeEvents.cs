@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class TradeEvents : MonoBehaviour
 {
+    public static event Action OnParking;
     public static event Action<Trade> OnReceiveTrade;
     public static event Action<TradeOffer> OnSendTradeOffer;
     public static event Action<TradeOffer> OnAcceptTradeOffer;
@@ -28,6 +29,11 @@ public class TradeEvents : MonoBehaviour
 
     public static void TriggerUpdateOffer(Trade trade, TradeOffer offer) {
         OnUpdateOffer?.Invoke(trade, offer);
+    }
+
+    public static void TriggerOnParking()
+    {
+        OnParking?.Invoke();
     }
 
 }

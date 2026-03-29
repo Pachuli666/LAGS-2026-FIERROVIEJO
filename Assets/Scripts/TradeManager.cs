@@ -72,7 +72,7 @@ public class TradeManager : MonoBehaviour
         currentOffer.item = trade.item;
         currentOffer.npc = trade.npc;
         currentOffer.priceOffer = trade.expectedOffer;
-        UIManager.instance.OpenPanel();
+        UISwitch.Instance.ShowTradeUI();
     }
 
     public void TryOffer() {

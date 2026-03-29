@@ -1,28 +1,51 @@
-using UnityEngine;
 using System.Collections.Generic;
+using UnityEngine;
+using static UnityEngine.Rendering.DebugUI.Table;
 
-public class HouseSpawner : MonoBehaviour
+public class ObstacleSpawner : MonoBehaviour
 {
     [Header("References")]
     public GameObject housePrefab;
     public Transform roadPlane;
 
+    public Transform houseContainer;
+
     [Header("Spacing")]
     public float spacing = 20f;
 
-    [Header("Event Settings")]
-    [Tooltip("Cada cuantas filas se prende un evento. 1 = todas, 3 = cada 3 filas")]
-    public int rowInterval = 3;
+    [Header("Configuracion")]
+    [Tooltip("Separacion minima entre casas accionables (1-3)")]
+    [Range(1, 3)]
+    public int minGapBetweenActive = 1;
+    public int maxActiveAtOnce = 2;
 
-    private List<(GameObject left, GameObject right)> rows = new();
-    private int currentRow = -1;
+    // Nombres de los hijos del prefab
+    const string ADM_NAME = "ADMIRATION_PNG_0";
+    const string INTR_NAME = "INTERRROGATION_PNG_0";
+    const string PARK_NAME = "ParkingZone";
+
+    private enum HouseType { Admiration, Interrogation }
+
+    private class HouseRow
+    {
+        public GameObject left;
+        public GameObject right;
+        public HouseType leftType;
+        public HouseType rightType;
+    }
+
+    private List<HouseRow> rows = new();
+    private List<int> activeRows = new(); // indices de filas accionables activas
+    private int nextRowToActivate = 0;
 
     void Start()
     {
+        transform.SetParent(transform);
+
         Spawn();
-        // Empezar en la primera fila que corresponde al intervalo
-        currentRow = rowInterval - 1;
-        ActivateRow(currentRow);
+        // Activar las primeras filas accionables
+        ActivateNext();
+        ActivateNext();
     }
 
     void Spawn()
@@ -44,56 +67,82 @@ public class HouseSpawner : MonoBehaviour
             float z = startZ - spacing * i;
             if (z < roadZMin) break;
 
-            var left = Instantiate(housePrefab, new Vector3(posX, posY, z), rotA, transform);
-            var right = Instantiate(housePrefab, new Vector3(mirrorX, posY, z), rotB, transform);
+            var row = new HouseRow
+            {
+                left = Instantiate(housePrefab, new Vector3(posX, posY, z), rotA, transform),
+                right = Instantiate(housePrefab, new Vector3(mirrorX, posY, z), rotB, transform),
+                leftType = Random.value > 0.5f ? HouseType.Admiration : HouseType.Interrogation,
+                rightType = Random.value > 0.5f ? HouseType.Admiration : HouseType.Interrogation
+            };
 
-            SetHouse(left, false, false); // izquierda = interrogation
-            SetHouse(right, false, true);  // derecha   = admiration
-            rows.Add((left, right));
+            // Inicializar todas apagadas
+            ApplyHouseState(row.left, false, row.leftType);
+            ApplyHouseState(row.right, false, row.rightType);
+
+            rows.Add(row);
             i++;
         }
+
+        Debug.Log($"[HouseSpawner] Filas generadas: {rows.Count}");
     }
 
-    void ActivateRow(int index)
+    // Activa la siguiente fila disponible respetando el gap
+    void ActivateNext()
     {
-        if (index < 0 || index >= rows.Count) return;
-        SetHouse(rows[index].left, true, false); // izquierda: interrogation
-        SetHouse(rows[index].right, true, true);  // derecha:   admiration
+        if (nextRowToActivate >= rows.Count) return;
+
+        int index = nextRowToActivate;  // guardar antes de modificar
+        var row = rows[index];
+
+        ApplyHouseState(row.left, true, row.leftType, index);  // pasar index
+        ApplyHouseState(row.right, true, row.rightType, index);  // pasar index
+
+        activeRows.Add(index);
+        nextRowToActivate += Random.Range(minGapBetweenActive, 4);
     }
 
     void DeactivateRow(int index)
     {
         if (index < 0 || index >= rows.Count) return;
-        SetHouse(rows[index].left, false, false);
-        SetHouse(rows[index].right, false, true);
+        var row = rows[index];
+        ApplyHouseState(row.left, false, row.leftType);
+        ApplyHouseState(row.right, false, row.rightType);
     }
 
-    // isAdmiration: true = mostrar admiration, false = mostrar interrogation
-    void SetHouse(GameObject house, bool on, bool isAdmiration)
+    void ApplyHouseState(GameObject house, bool on, HouseType type, int rowIndex = -1)
     {
-        Transform adm = house.transform.Find("ADMIRATION_PNG_0");
-        Transform intr = house.transform.Find("INTERRROGATION_PNG_0");
-        Transform park = house.transform.Find("ParkingZone");
+        Transform adm = house.transform.Find(ADM_NAME);
+        Transform intr = house.transform.Find(INTR_NAME);
+        Transform park = house.transform.Find(PARK_NAME);
+
+        bool isAdmiration = type == HouseType.Admiration;
 
         if (adm != null) adm.GetComponent<SpriteRenderer>().enabled = on && isAdmiration;
         if (intr != null) intr.GetComponent<SpriteRenderer>().enabled = on && !isAdmiration;
 
         if (park != null)
         {
-            park.GetComponent<SpriteRenderer>().enabled = on;
-            if (on)
+            var parkSprite = park.GetComponent<SpriteRenderer>();
+            var parkCol = park.GetComponent<BoxCollider>();
+
+            if (parkSprite != null) parkSprite.enabled = on && !isAdmiration;
+            if (parkCol != null) parkCol.enabled = on && !isAdmiration;
+
+            if (on && !isAdmiration && rowIndex >= 0)
             {
-                var t = park.GetComponent<ParkingTrigger>() ?? park.gameObject.AddComponent<ParkingTrigger>();
-                t.Init(this);
+                var t = park.GetComponent<ParkingTrigger>()
+                     ?? park.gameObject.AddComponent<ParkingTrigger>();
+                t.Init(this, rowIndex);
             }
         }
     }
 
-    public void OnTruckEntered()
+    // Llamado por ParkingTrigger cuando el camion estaciona
+    public void OnTruckParked(int rowIndex)
     {
-        DeactivateRow(currentRow);
-        currentRow += rowInterval;
-        ActivateRow(currentRow);
+        DeactivateRow(rowIndex);
+        activeRows.Remove(rowIndex);
+        ActivateNext();
     }
 
     float GetRoadZMin()

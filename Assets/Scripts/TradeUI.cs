@@ -48,6 +48,7 @@ public class TradeUI : MonoBehaviour
 
     public void Decrease() {
         TradeManager.Instance.LowerOffer();
+        Debug.Log("llama?");
     }
 
     public void Increase() {

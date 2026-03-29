@@ -8,11 +8,15 @@ public class PlayerInfoSO: ScriptableObject
 {
 
     public Bindable<float> money;
+    public Bindable<float> weight;
     public int affinity;
     public int maxInventorySpace;
     public List<Item> items;
 
     public float Money { get { return money.Value; } set { money.Value = value;  } }
+
+    public float Weight { get { return weight.Value; } set { weight.Value = value; } }
+
 
     public bool CanAfford(int price) => money.Value >= price;
     public bool HasInventorySpace() => items.Count < maxInventorySpace;
