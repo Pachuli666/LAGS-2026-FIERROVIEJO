@@ -17,11 +17,6 @@ public class PlayerHud : MonoBehaviour
     [SerializeField]
     private TMP_Text afinityTxt;
 
-    [SerializeField]
-    private TMP_Text timeTxt;
-
-    float time;
-
     private void OnEnable()
     {
         playerData.money.OnValueChanged += ChangeMoney;
@@ -41,12 +36,6 @@ public class PlayerHud : MonoBehaviour
         moneyTxt.text = $"Dinero: {playerData.Money}";
         weightTxt.text = $"PESO KG: {playerData.Weight}";
 
-    }
-
-    private void Update()
-    {
-        time += Time.deltaTime;
-        timeTxt.text = $"TIEMPO :{Mathf.FloorToInt(time / 60):00}:{Mathf.FloorToInt(time % 60):00}";
     }
 
     public void ChangeMoney(float value) {
