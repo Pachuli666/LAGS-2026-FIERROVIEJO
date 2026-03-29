@@ -127,4 +127,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ParkingHandler
   inParking: 0
-  parkingTolerance: 0.5
+  parkingTolerance: 3
