@@ -46,7 +46,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::NPC
   playerData: {fileID: 11400000, guid: 372444db93429284c9241fa35c03988b, type: 2}
   npcName: prueba
-  initialHumor: 0
   sellingItems:
   - {fileID: 11400000, guid: 197622161825e17499b86617b2498877, type: 2}
   lastOffer: 0
